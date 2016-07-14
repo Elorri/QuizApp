@@ -1,30 +1,47 @@
 <resources  xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+	<!-- The app name -->
     <string name="app_name">QuizApp</string>
-    <string name="company_name">Compagny name (ex: Novae Communication)</string>
-    <string name="location">Location</string>
+	
+	<!-- The questions asked in the quiz -->
+    <string name="company_name">Do you know the SNCF company ?</string>
+	<string name="mission">What is the company mission ?</string>
+    <string name="location">Where is implanted this company ?</string>
+	<string name="positions">What job positions are currently available ?</string>
+	<string name="work_environment">How is the work environement ?</string>
+	<string name="career_growth">Is there any career growth opportunities ?</string>
+	
+	
+	<!-- Possible answer for mission question -->
+	<string name="mission_desc">ex : Help people communicate their passions</string>
+	
+	<!-- Possible answer for question 1 -->
     <string name="europe">Europe</string>
     <string name="asia">Asia</string>
     <string name="usa">Usa</string>
     <string name="others">Others</string>
-    <string name="mission">Mission</string>
-    <string name="mission_desc">ex : Help people communicate their passions</string>
-    <string name="positions">Positions</string>
-    <string name="android_developer">Android Developer</string>
-    <string name="android_developer_mentor">Android Developer Mentor</string>
-    <string name="seo_manager">SEO Manager</string>
-    <string name="work_environment">Work environement</string>
-    <string name="small_project">Small projects (vs Big projects)</string>
-    <string name="customer_facing">Customer facing (vs Internal facing)</string>
-    <string name="on_site_work">Working on site (instead of remote site)</string>
-    <string name="networking_opportunities">Networking opportunities</string>
-    <string name="grade">Grade</string>
-    <string name="career_growth">Career growth</string>
-    <string name="mentorship_opportunities">Mentorship opportunities (to be a mentor and/or a
-        mentee)
-    </string>
-    <string name="freelance">Full time (instead of freelance)</string>
-    <string name="english_teacher">English teacher</string>
-    <string name="english_language_improvement">English language improvement</string>
 
-    <string name="grade_value"><xliff:g example="2">%d</xliff:g>/14</string>
+ 	<!-- Possible answer for question 2 -->
+    <string name="android_developer">Android Developer</string>
+    <string name="train_driver">Train driver</string>
+    <string name="ticket_inspectors">Ticket inspectors</string>
+    <string name="english_teacher">English teacher</string>	
+	
+	<!-- Possible answer for question 3 -->
+    <string name="small_project">Work on small projects</string>
+    <string name="customer_facing">Customer facing</string>
+    <string name="on_site_work">Working on site</string>	
+	<string name="freelance">Freelance</string>
+	
+	<!-- Possible answer for question 4 -->
+    <string name="networking_opportunities">Networking opportunities</string>
+    <string name="mentorship_opportunities">Mentorship opportunities (to be a mentor and/or a mentee)</string>
+    <string name="english_language_improvement">English language improvement</string>	
+
+	<!-- Submit button to ask for grading -->	
+    <string name="grade">Grade</string>
+	
+	<!-- Grading result message displayed after cliclking the grade button -->		
+    <string name="grade_value">Your grade : <xliff:g example="2">%d</xliff:g>/<xliff:g
+        example="20">%d</xliff:g></string>
 </resources>

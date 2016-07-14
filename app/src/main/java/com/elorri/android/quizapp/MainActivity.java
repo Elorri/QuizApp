@@ -5,25 +5,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int EUROPE_FACTOR = 3;
-    private static final int ASIA_FACTOR = 2;
-    private static final int USA_FACTOR = 1;
-    private static final int ANDROID_DEVELOPER_FACTOR = 1;
-    private static final int ANDROID_DEVELOPER_MENTOR_FACTOR = 1;
-    private static final int ENGLISH_TEACHER_FACTOR = 1;
-    private static final int SEO_MANAGER_FACTOR = 1;
-    private static final int SMALL_PROJECT_FACTOR = 1;
-    private static final int CUSTOMER_FACING_FACTOR = 1;
-    private static final int ON_SITE_WORK_FACTOR = 1;
-    private static final int FREELANCE_FACTOR = 1;
-    private static final int MENTORSHIP_OPPORTUNITIES_FACTOR = 1;
-    private static final int NETWORKING_OPPORTUNITIES_FACTOR = 1;
-    private static final int ENGLISH_LANGUAGE_IMPROVEMENT_FACTOR = 1;
+    /**
+     * Depending on the notation, here is the grade when all anwers are corrects.
+     */
+    private static final int GRADE_MAX_VALUE = 60;
+	
+	/**
+     * The number of questions of the quiz
+     */
+    private static final int NB_QUESTIONS = 4;
 
+	/**
+     * The variable will store the grade value
+     */
     private int gradeValue;
 
     @Override
@@ -33,60 +31,83 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void grade(View view) {
+        int correctQuestions = 0;
+        if (isQuestion1correct()) correctQuestions++;
+        if (isQuestion2correct()) correctQuestions++;
+        if (isQuestion3correct()) correctQuestions++;
+        if (isQuestion4correct()) correctQuestions++;
+        gradeValue=calculateGradeValue(correctQuestions, GRADE_MAX_VALUE, NB_QUESTIONS);
+        Toast.makeText(this, getResources().getString(R.string.grade_value, this.gradeValue,
+                GRADE_MAX_VALUE), Toast.LENGTH_SHORT).show();
+    }
 
-        // Getting the ids of the views we need
-        RadioButton europe = (RadioButton) findViewById(R.id.europe);
-        RadioButton asia = (RadioButton) findViewById(R.id.asia);
-        RadioButton usa = (RadioButton) findViewById(R.id.usa);
+
+	/**
+     * Tell if the correct answer is selected on screen for question 1
+     */
+    private boolean isQuestion1correct() {
+      RadioButton europe = (RadioButton) findViewById(R.id.europe);
+
+        //We could have simply used this line
+        //return europe.isChecked()
+        //the effect would have been the same
+        if (europe.isChecked())
+            return true;
+        else
+            return false;
+    }
+
+	/**
+     * Tell if the correct answer is selected on screen for question 2
+     */
+    private boolean isQuestion2correct() {
         CheckBox androidDeveloper = (CheckBox) findViewById(R.id.android_developer);
-        CheckBox androidDeveloperMentor = (CheckBox) findViewById(R.id.android_developer_mentor);
+        CheckBox trainDriver = (CheckBox) findViewById(R.id.train_driver);
+        CheckBox ticketInspectors = (CheckBox) findViewById(R.id.ticket_inspectors);
         CheckBox englishTeacher = (CheckBox) findViewById(R.id.english_teacher);
-        CheckBox seoManager = (CheckBox) findViewById(R.id.seo_manager);
+        return trainDriver.isChecked()
+                &&ticketInspectors.isChecked()
+                &&!androidDeveloper.isChecked()
+                &&!englishTeacher.isChecked();
+    }
+	
+	
+	/**
+     * Tell if the correct answer is selected on screen for question 3
+     */
+    private boolean isQuestion3correct() {
         CheckBox smallProject = (CheckBox) findViewById(R.id.small_project);
         CheckBox customerFacing = (CheckBox) findViewById(R.id.customer_facing);
         CheckBox onSiteWork = (CheckBox) findViewById(R.id.on_site_work);
         CheckBox freelance = (CheckBox) findViewById(R.id.freelance);
+        return customerFacing.isChecked()
+                &&onSiteWork.isChecked()
+                &&!smallProject.isChecked()
+                &&!freelance.isChecked();
+    }
+
+	/**
+     * Tell if the correct answer is selected on screen for question 4
+     */
+    private boolean isQuestion4correct() {
         CheckBox mentorshipOpportunities = (CheckBox) findViewById(R.id.mentorship_opportunities);
         CheckBox networkingOpportunities = (CheckBox) findViewById(R.id.networking_opportunities);
         CheckBox englishLanguageImprovement = (CheckBox) findViewById(R.id.english_language_improvement);
-        TextView gradeValue=(TextView)findViewById(R.id.gradeValue);
-
-
-        if (europe.isChecked())
-            increaseGrade(EUROPE_FACTOR);
-        if (asia.isChecked())
-            increaseGrade(ASIA_FACTOR);
-        if (usa.isChecked())
-            increaseGrade(USA_FACTOR);
-        if (androidDeveloper.isChecked())
-            increaseGrade(ANDROID_DEVELOPER_FACTOR);
-        if (androidDeveloperMentor.isChecked())
-            increaseGrade(ANDROID_DEVELOPER_MENTOR_FACTOR);
-        if (englishTeacher.isChecked())
-            increaseGrade(ENGLISH_TEACHER_FACTOR);
-        if (seoManager.isChecked())
-            increaseGrade(SEO_MANAGER_FACTOR);
-        if (smallProject.isChecked())
-            increaseGrade(SMALL_PROJECT_FACTOR);
-        if (customerFacing.isChecked())
-            increaseGrade(CUSTOMER_FACING_FACTOR);
-        if (onSiteWork.isChecked())
-            increaseGrade(ON_SITE_WORK_FACTOR);
-        if (freelance.isChecked())
-            increaseGrade(FREELANCE_FACTOR);
-        if (mentorshipOpportunities.isChecked())
-            increaseGrade(MENTORSHIP_OPPORTUNITIES_FACTOR);
-        if (networkingOpportunities.isChecked())
-            increaseGrade(NETWORKING_OPPORTUNITIES_FACTOR);
-        if (englishLanguageImprovement.isChecked())
-            increaseGrade(ENGLISH_LANGUAGE_IMPROVEMENT_FACTOR);
-
-        gradeValue.setText(getResources().getString(R.string.grade_value, this.gradeValue));
-
+        return networkingOpportunities.isChecked()
+                &&englishLanguageImprovement.isChecked()
+                &&!mentorshipOpportunities.isChecked();
     }
 
-    private void increaseGrade(int factor) {
-        gradeValue = gradeValue + factor;
+
+    /**
+     * Calculate the grade based on the number of questions correct, the maximum possible grade, and the total number of questions
+     * @param nbCorrectQuestions the number of questions correct
+     * @param gradeMaxValue the maximum possible grade
+     * @param nbQuestions the total number of questions
+     * @return the grade
+     */
+    private int calculateGradeValue(int nbCorrectQuestions, int gradeMaxValue, int nbQuestions) {
+        return (gradeMaxValue*nbCorrectQuestions)/nbQuestions;
     }
 
 
