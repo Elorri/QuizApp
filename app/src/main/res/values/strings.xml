@@ -1,0 +1,30 @@
+<resources  xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">QuizApp</string>
+    <string name="company_name">Compagny name (ex: Novae Communication)</string>
+    <string name="location">Location</string>
+    <string name="europe">Europe</string>
+    <string name="asia">Asia</string>
+    <string name="usa">Usa</string>
+    <string name="others">Others</string>
+    <string name="mission">Mission</string>
+    <string name="mission_desc">ex : Help people communicate their passions</string>
+    <string name="positions">Positions</string>
+    <string name="android_developer">Android Developer</string>
+    <string name="android_developer_mentor">Android Developer Mentor</string>
+    <string name="seo_manager">SEO Manager</string>
+    <string name="work_environment">Work environement</string>
+    <string name="small_project">Small projects (vs Big projects)</string>
+    <string name="customer_facing">Customer facing (vs Internal facing)</string>
+    <string name="on_site_work">Working on site (instead of remote site)</string>
+    <string name="networking_opportunities">Networking opportunities</string>
+    <string name="grade">Grade</string>
+    <string name="career_growth">Career growth</string>
+    <string name="mentorship_opportunities">Mentorship opportunities (to be a mentor and/or a
+        mentee)
+    </string>
+    <string name="freelance">Full time (instead of freelance)</string>
+    <string name="english_teacher">English teacher</string>
+    <string name="english_language_improvement">English language improvement</string>
+
+    <string name="grade_value"><xliff:g example="2">%d</xliff:g>/14</string>
+</resources>

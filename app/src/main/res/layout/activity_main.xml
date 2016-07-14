@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/name_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/company_name"
+                android:inputType="textMultiLine"/>
+
+            <TextView
+                android:id="@+id/gradeValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="left"
+                android:visibility="gone"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:text="@string/mission"
+            android:textAllCaps="true"/>
+
+        <EditText
+            android:id="@+id/missionDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mission_desc"
+            android:inputType="textMultiLine"
+            android:maxLength="50"
+            android:padding="8dp"
+            android:singleLine="false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:text="@string/location"
+            android:textAllCaps="true"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/europe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/europe"
+                android:textSize="16sp"/>
+            <RadioButton
+                android:id="@+id/asia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asia"
+                android:textSize="16sp"/>
+            <RadioButton
+                android:id="@+id/usa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usa"
+                android:textSize="16sp"/>
+            <RadioButton
+                android:id="@+id/others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/others"
+                android:textSize="16sp"/>
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:text="@string/positions"
+            android:textAllCaps="true"/>
+
+
+        <CheckBox
+            android:id="@+id/android_developer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/android_developer"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/android_developer_mentor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/android_developer_mentor"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/english_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/english_teacher"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/seo_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/seo_manager"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:text="@string/work_environment"
+            android:textAllCaps="true"/>
+
+        <CheckBox
+            android:id="@+id/small_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/small_project"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/customer_facing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/customer_facing"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/on_site_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/on_site_work"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/freelance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/freelance"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/career_growth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:text="@string/career_growth"
+            android:textAllCaps="true"/>
+
+        <CheckBox
+            android:id="@+id/mentorship_opportunities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/mentorship_opportunities"
+            android:textSize="16sp"/>
+
+
+        <CheckBox
+            android:id="@+id/networking_opportunities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/networking_opportunities"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:id="@+id/english_language_improvement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="@string/english_language_improvement"
+            android:textSize="16sp"/>
+
+
+        <Button
+            android:id="@+id/grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:onClick="grade"
+            android:text="@string/grade"/>
+
+    </LinearLayout>
+</ScrollView>
