@@ -44,4 +44,5 @@
 	<!-- Grading result message displayed after cliclking the grade button -->		
     <string name="grade_value">Your grade : <xliff:g example="2">%d</xliff:g>/<xliff:g
         example="20">%d</xliff:g></string>
+    <string name="sncf_mission">Transport people</string>
 </resources>
